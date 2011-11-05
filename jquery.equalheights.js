@@ -6,7 +6,7 @@
      * Copyright (c) 2011 Luminosity Group
      */
     $.fn.equalheights = function (options) {
-        var container = this;
+        var container = this, defaults, settings;
 
         defaults = {
             selector: '.column',
@@ -22,9 +22,9 @@
 
             $(settings.selector, this).each(function () {
                 height = $(this).height();
-                console.log(height);
-                if (height > target)
+                if (height > target) {
                     target = height;
+                }
             });
 
             $(settings.selector, this).each(function () {
